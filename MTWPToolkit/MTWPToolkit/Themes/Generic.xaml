@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:MTWPToolkit.Controls">
+    <Style TargetType="controls:MTBulletControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:MTBulletControl">
+                    <Grid x:Name="LayoutRoot"
+                          Background="{Binding ElementName=Control,Path=Background}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Image x:Name="Image"
+                               HorizontalAlignment="Left"
+                               Height="{TemplateBinding ImageHeight}"
+                               VerticalAlignment="Center"
+                               Width="{TemplateBinding ImageWidth}"
+                               Source="{TemplateBinding ImageSource}" />
+                        <TextBlock x:Name="ContentTextBlock"
+                                   Grid.Column="1"
+                                   TextWrapping="Wrap"
+                                   Text="{TemplateBinding Text}"
+                                   Margin="{TemplateBinding TextMargin}"
+                                   FontSize="{TemplateBinding FontSize}"
+                                   Foreground="{TemplateBinding Foreground}"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
